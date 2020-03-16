@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JavaScript ExampleJavaScript Example</title>
+		<meta charset="utf-8">
+<style>
+		body {
+			font-family: Verdana, Arial, sans-serif;
+			background-color: #cccccc;
+			color:#ffffff
+			}
+		#content {
+			margin: 0 auto;
+			padding: 1em;
+			width: 800px; 
+			height:640px;
+			background-color: #000000;
+			text-align: center;
+			}
+		#bulb_box  {
+			margin: 0 auto;
+			padding: 1em;
+			width: 250px; 
+			height:380px;
+			}
+</style>
+		
+		<script>
+			function switchbulb() {
+				var bulb = document.getElementById('light_bulb'); //get img from DOM
+				if (bulb.src.match("light_bulb_on")) //check for on or off by matching to SRC
+				    {
+					bulb.src = "light_bulb_off.png";
+					document.getElementById('lightswitch').innerHTML = "Turn Light On!";
+					} 
+					else 
+					  {
+						bulb.src = "light_bulb_on.png";
+						document.getElementById('lightswitch').innerHTML = "Turn Light Off!";
+					}
+			}
+			function show_date() {
+				document.getElementById("loadtime").innerHTML = Date();
+			}
+			
+</script>
+
+</head>
+
+<body onload="show_date()">
+	<div id="content">   
+		<header>
+			<h1>JavaScript Example: Turn Out the Light!</h1>
+			<p>This Page Loaded: <span id="loadtime"></span></p>
+		</header>  
+		<div id="bulb_box">
+			<img id="light_bulb"  src="light_bulb_on.png" width="189" height="300">
+			<p><button id="lightswitch" onclick="switchbulb()">Turn Light Off!</button></p>
+		</div> <!--bulb_box-->
+		<footer>
+			<p>&copy; 2014 IT Program, DATC.EDU, All rights Reserved.</p>
+		</footer>
+	</div> <!--content-->
+</body>
+</html>
